@@ -6,14 +6,27 @@ defineProps<{
 
 <template>
   <section class="about-section">
-    <h2 class="section-title">About Me</h2>
-    <p class="content">{{ about }}</p>
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p class="content">{{ about }}</p>
+    </div>
   </section>
 </template>
 
 <style scoped>
 .about-section {
-  margin-bottom: 3rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-snap-align: start;
+  padding: 2rem 1.5rem;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .section-title {

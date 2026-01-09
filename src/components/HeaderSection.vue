@@ -31,9 +31,15 @@ defineProps<{
 <style scoped>
 .header-section {
   text-align: center;
-  padding: 3rem 0;
+  padding: 3rem 1.5rem;
   background-color: var(--color-background-mute);
   border-bottom: 1px solid var(--color-border);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
 }
 
 .name {

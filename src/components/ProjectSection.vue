@@ -9,20 +9,33 @@ defineProps<{
 
 <template>
   <section class="project-section">
-    <h2 class="section-title">Projects</h2>
-    <div class="project-list">
-      <ProjectItem
-        v-for="project in projects"
-        :key="project.id"
-        :project="project"
-      />
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="project-list">
+        <ProjectItem
+          v-for="project in projects"
+          :key="project.id"
+          :project="project"
+        />
+      </div>
     </div>
   </section>
 </template>
 
 <style scoped>
 .project-section {
-  margin-bottom: 3rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-snap-align: start;
+  padding: 2rem 1.5rem;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .section-title {

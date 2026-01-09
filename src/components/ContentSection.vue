@@ -17,18 +17,16 @@ defineProps<{
 
 <template>
   <main class="content-section">
-    <AboutSection :about="about" />
-    <ExperienceSection :experiences="experiences" />
-    <ProjectSection :projects="projects" />
-    <SideProjectSection :sideProjects="sideProjects" />
-    <SkillSection :skills="skills" />
+    <AboutSection id="about" :about="about" />
+    <ExperienceSection id="experience" :experiences="experiences" />
+    <ProjectSection id="projects" :projects="projects" />
+    <SideProjectSection id="side-projects" :sideProjects="sideProjects" />
+    <SkillSection id="skills" :skills="skills" />
   </main>
 </template>
 
 <style scoped>
 .content-section {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
+  width: 100%;
 }
 </style>

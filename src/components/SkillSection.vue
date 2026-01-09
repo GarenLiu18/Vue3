@@ -9,17 +9,19 @@ defineProps<{
 
 <template>
   <section class="skill-section">
-    <h2 class="section-title">Skills</h2>
-    <div class="skill-categories">
-      <div v-for="category in skills" :key="category.id" class="category-group">
-        <h3 class="category-title">{{ category.category }}</h3>
-        <div class="skill-list">
-          <SkillItem
-            v-for="item in category.items"
-            :key="item"
-            :name="item"
-            class="skill-gap"
-          />
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <div class="skill-categories">
+        <div v-for="category in skills" :key="category.id" class="category-group">
+          <h3 class="category-title">{{ category.category }}</h3>
+          <div class="skill-list">
+            <SkillItem
+              v-for="item in category.items"
+              :key="item"
+              :name="item"
+              class="skill-gap"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -28,7 +30,18 @@ defineProps<{
 
 <style scoped>
 .skill-section {
-  margin-bottom: 3rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-snap-align: start;
+  padding: 2rem 1.5rem;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .section-title {

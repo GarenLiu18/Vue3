@@ -9,7 +9,7 @@ import FooterSection from '@/components/FooterSection.vue';
 <template>
   <Layout>
     <template #header>
-      <HeaderSection :headerData="resumeData.header" />
+      <HeaderSection id="home" :headerData="resumeData.header" />
     </template>
 
     <template #content>

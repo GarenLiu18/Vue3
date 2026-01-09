@@ -9,20 +9,33 @@ defineProps<{
 
 <template>
   <section class="experience-section">
-    <h2 class="section-title">Experience</h2>
-    <div class="experience-list">
-      <ExperienceItem
-        v-for="exp in experiences"
-        :key="exp.id"
-        :experience="exp"
-      />
+    <div class="container">
+      <h2 class="section-title">Experience</h2>
+      <div class="experience-list">
+        <ExperienceItem
+          v-for="exp in experiences"
+          :key="exp.id"
+          :experience="exp"
+        />
+      </div>
     </div>
   </section>
 </template>
 
 <style scoped>
 .experience-section {
-  margin-bottom: 3rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-snap-align: start;
+  padding: 2rem 1.5rem;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .section-title {
