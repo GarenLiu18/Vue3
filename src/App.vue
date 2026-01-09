@@ -16,6 +16,8 @@ import FooterSection from '@/components/FooterSection.vue';
       <ContentSection
         :about="resumeData.about"
         :experiences="resumeData.experience"
+        :projects="resumeData.projects"
+        :sideProjects="resumeData.sideProjects"
         :skills="resumeData.skills"
       />
     </template>

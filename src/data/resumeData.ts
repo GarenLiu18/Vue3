@@ -19,6 +19,17 @@ export interface ExperienceData {
   description: string[];
 }
 
+export interface ProjectData {
+  id: number;
+  name: string;
+  description: string;
+  technologies: string[];
+  link?: string;
+}
+
+// SideProject structure is identical to Project for now
+export type SideProjectData = ProjectData;
+
 export interface SkillData {
   id: number;
   category: string;
@@ -29,6 +40,8 @@ export interface ResumeData {
   header: HeaderData;
   about: string;
   experience: ExperienceData[];
+  projects: ProjectData[];
+  sideProjects: SideProjectData[];
   skills: SkillData[];
   footer: {
     year: number;
@@ -70,6 +83,38 @@ export const resumeData: ResumeData = {
         "與設計師密切合作，實現高品質的互動視覺效果。",
         "優化 RWD 體驗，確保在各裝置上呈現完美。"
       ]
+    }
+  ],
+  projects: [
+    {
+      id: 1,
+      name: "電商購物平台",
+      description: "使用 Vue 3 + Vite 開發的全功能電商平台，包含商品瀏覽、購物車、結帳流程與會員中心。",
+      technologies: ["Vue 3", "Pinia", "TypeScript", "Tailwind CSS"],
+      link: "https://shop.example.com"
+    },
+    {
+      id: 2,
+      name: "個人部落格系統",
+      description: "基於 Node.js 與 Express 建置的部落格後端 API，支援文章 CRUD、標籤管理與 Markdown 解析。",
+      technologies: ["Node.js", "Express", "MongoDB", "JWT"],
+      link: "https://github.com/xiaoming/blog-api"
+    }
+  ],
+  sideProjects: [
+    {
+      id: 1,
+      name: "To-Do List Chrome Extension",
+      description: "一個輕量級的待辦事項 Chrome 擴充功能，支援拖即排序與離線儲存。",
+      technologies: ["JavaScript", "Chrome API", "HTML/CSS"],
+      link: "https://chrome.google.com/webstore/detail/..."
+    },
+    {
+      id: 2,
+      name: "天氣查詢 Bot",
+      description: "Line Bot 聊天機器人，串接中央氣象局 API 提供即時天氣資訊。",
+      technologies: ["Node.js", "Line Messaging API", "Heroku"],
+      link: "https://github.com/xiaoming/weather-bot"
     }
   ],
   skills: [

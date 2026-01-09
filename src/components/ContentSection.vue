@@ -1,12 +1,16 @@
 <script setup lang="ts">
-import type { ExperienceData, SkillData } from '@/data/resumeData';
+import type { ExperienceData, ProjectData, SideProjectData, SkillData } from '@/data/resumeData';
 import AboutSection from './AboutSection.vue';
 import ExperienceSection from './ExperienceSection.vue';
+import ProjectSection from './ProjectSection.vue';
+import SideProjectSection from './SideProjectSection.vue';
 import SkillSection from './SkillSection.vue';
 
 defineProps<{
   about: string;
   experiences: ExperienceData[];
+  projects: ProjectData[];
+  sideProjects: SideProjectData[];
   skills: SkillData[];
 }>();
 </script>
@@ -15,6 +19,8 @@ defineProps<{
   <main class="content-section">
     <AboutSection :about="about" />
     <ExperienceSection :experiences="experiences" />
+    <ProjectSection :projects="projects" />
+    <SideProjectSection :sideProjects="sideProjects" />
     <SkillSection :skills="skills" />
   </main>
 </template>
