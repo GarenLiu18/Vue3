@@ -6,10 +6,10 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/Vue3/',
+  base: process.env.NODE_ENV === 'production' ? '/Vue3/' : '/',
   plugins: [
     vue(),
-    vueDevTools(),
+    process.env.NODE_ENV !== 'production' ? vueDevTools() : null,,
   ],
   resolve: {
     alias: {
